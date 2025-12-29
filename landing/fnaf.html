@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="top">
+        <div class="nav-bar">
+            <a href="../index.html" class="nav-logo"> 🎬 MovieBooking</a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../movies.html">Movies</a></li>
+                <li><a href="#">Bookings</a></li>
+                <div id="nav-btn" onclick="openLogin()"></div>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="mov-bg-img">
+            <img src="../pics/fnaf 4k.jpg">
+        </div>
+        <div class="mov-content">
+            <div class="mov-pic">
+                <img src="../pics/fnaf.jpg">
+            </div>
+
+            <div class="mov-desc">
+                <h1>Five Nights at Freddy's 2</h1>
+                <h4>Horror | Supernatural | Thriller</h4>
+                <h5>⭐ 8.3</h5>
+                <input type="button" value="Book Now!" class="btn-reco"
+                 onclick="window.location.href='../seat-booking.php?movie_id=3'">
+                <p>Five Nights at Freddy's 2 is a horror film that combines suspense, mystery, and survival elements within the eerie world of Freddy Fazbear's Pizza. The story follows a young night security guard who takes a job at the seemingly ordinary pizzeria, only to discover that the animatronic characters come to life after hours with deadly intent. Trapped inside the haunted restaurant, the guard must survive each night while uncovering the dark and horrifying secrets hidden within the establishment.
+    
+                As the nights progress, tension escalates with every flickering light and creaking sound, forcing the guard to rely on quick thinking, strategy, and nerves of steel. While the film is rooted in horror and suspense, it also explores themes of fear, vigilance, and the terrifying consequences of curiosity.
+                    
+                Five Nights at Freddy's 2 delivers a chilling experience for fans of psychological and supernatural horror, immersing viewers in a nightmarish world where survival is never guaranteed.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-section">
+                <h3>MovieBooking</h3>
+                <p>Your go-to movie seat booking website.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Terms & Conditions</h4>
+                <p>
+                    By using this website, you agree to our terms and conditions.
+                    All bookings are subject to availability.
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>Email: support@moviebooking.com</p>
+                <p>Phone: +63 912 345 6789</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">Instagram</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 MovieBooking. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLogin()">&times;</span>
+            <h2>Login</h2>
+    
+            <input type="text" placeholder="Username">
+            <input type="password" placeholder="Password">
+    
+            <button class="modal-btn">Login</button>
+            <p>Don't have an account?
+                <span class="link" onclick="switchToRegister()">Register</span>
+            </p>
+        </div>
+    </div>
+
+    <div class="modal" id="registerModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeRegister()">&times;</span>
+            <h2>Register</h2>
+    
+            <input type="text" placeholder="Username">
+            <input type="password" placeholder="Password">
+            <input type="password" placeholder="Re-enter your Password">
+    
+            <button class="modal-btn">Register</button>
+            <p>Already have an account?
+                <span class="link" onclick="switchToLogin()">Login</span>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let current = 0;
+        
+        function nextSlide() {
+            slides[current].classList.remove('active');
+            current = (current + 1) % slides.length;
+            slides[current].classList.add('active');
+        }
+        
+        setInterval(nextSlide, 5000); 
+
+        function openLogin() {
+    document.getElementById("loginModal").style.display = "flex";
+    }
+
+    function closeLogin() {
+        document.getElementById("loginModal").style.display = "none";
+    }
+
+    function openRegister() {
+        document.getElementById("registerModal").style.display = "flex";
+    }
+
+    function closeRegister() {
+        document.getElementById("registerModal").style.display = "none";
+    }
+
+    function switchToRegister() {
+        closeLogin();
+        openRegister();
+    }
+
+    function switchToLogin() {
+        closeRegister();
+        openLogin();
+}
+        </script>
+</body>
+</html>

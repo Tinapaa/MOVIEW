@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    font-size: clamp(14px, 1vw, 18px);
+}
+
+.top{
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    background: white;
+}
+
+.nav-bar {
+    background-color: white;
+    color: gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    max-width: 14440px;
+    margin: 0 auto;
+    padding: 20px 40px;
+}
+
+.nav-logo {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(58, 41, 41);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 45px;
+    align-items: center;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: rgb(58, 41, 41);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.nav-links li a:hover {
+    color: #f39c12;
+}
+
+#nav-btn{
+    background-color: gray;
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------------------------------- */
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;         
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+
+.mov-bg-img img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    filter: brightness(50%);
+}
+
+.mov-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    position: relative;
+    z-index: 2;         
+    max-width: 1200px;
+    align-items: center;   
+}
+
+
+.mov-pic {
+    flex: 0 0 300px;     
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.mov-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1;                 
+}
+
+.mov-desc {
+    flex: 1;
+    color: white;
+}
+
+.mov-desc h1 { 
+    font-size: clamp(3rem, 4vw, 4rem); 
+    margin-bottom: 10px; 
+}
+
+.mov-desc h4 { 
+    font-weight: lighter; 
+    margin-bottom: 10px; 
+}
+
+.mov-desc h5 { 
+    margin-bottom: 15px; 
+}
+
+.mov-desc p { 
+    font-size: 0.95rem; 
+    line-height: 1.5; 
+    margin-top: 15px; 
+}
+
+.btn-reco {
+    background-color: #f39c12;
+    color: black;
+    border: none;
+    padding: 12px 25px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 15px;
+}
+
+.btn-reco:hover {
+    background-color: #e67e22;
+}
+
+/* --------------------------------------------------------------------------------------------------------- */
+.footer {
+    background-color: #111;
+    color: #ccc;
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    padding: 40px 20px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.social-links a {
+    display: block;
+    text-decoration: none;
+    color: #ccc;
+    margin-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #f39c12;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 15px;
+    background-color: #000;
+    font-size: 14px;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    width: 350px;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    animation: popup 0.3s ease;
+}
+
+.modal-content p {
+    padding-top: 10px;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.modal-btn {
+    width: 100%;
+    padding: 10px;
+    background: #f39c12;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.link {
+    color: #f39c12;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+@keyframes popup {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
